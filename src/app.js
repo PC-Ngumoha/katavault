@@ -8,12 +8,12 @@
 const express = require('express');
 require('dotenv').config();
 require('./db/mongoose.js');
-// const hbs = require('hbs');
 // const path = require('path');
 const userRouter = require('./routers/user.js');
 
 const app = express();
 
+app.use(express.static('public'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(userRouter);

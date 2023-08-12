@@ -1,0 +1,83 @@
+/* Page background & Navbar Header color: #362285*/
+/* Navbar & Button Hover white: #f1f0f5*/
+/* Navbar text & border color: #565657*/
+
+/* SETUP */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,400;0,500;1,400&family=Lobster&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+/* GENERAL UTILITY CLASSES */
+
+/* Buttons */
+
+.btn-dark-solid-border {
+  border: .1rem solid #565657;
+  padding: 1rem 1rem;
+  border-radius: 1rem;
+}
+
+.btn-dark-solid-border:hover {
+  background-color: #565657;
+  color: #f1f0f5;
+  transition: all .7s;
+}
+
+
+
+/* NAVIGATION BAR STYLING */
+
+nav {
+  font-size: 1.5rem;
+  background-color: #f1f0f5;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 1rem;
+  position: sticky;
+}
+
+/* nav > div {
+  display: flex;
+} */
+
+
+nav  a {
+  text-decoration: none;
+  color: #565657;
+  margin: .5rem; 
+}
+
+
+.nav-header {
+  font-size: 2.1rem;
+}
+
+.nav-header > .kata {
+  font-weight: 400;
+  color: #362285;
+  font-family: 'Lobster', cursive;
+}
+
+.nav-header > .vault {
+  font-weight: 500;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.nav-contents {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+  font-size: 1.3rem;
+  font-family: 'Fira Sans', sans-serif;
+}

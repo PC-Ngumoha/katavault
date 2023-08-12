@@ -4,9 +4,11 @@
  *
  * Contains the definition for a new 'User' data model
  */
+require('dotenv').config();
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 const validator = require('validator');
+const jwt = require('jsonwebtoken');
 
 const userSchema = new mongoose.Schema({
   firstName: {
@@ -59,12 +61,40 @@ const userSchema = new mongoose.Schema({
     required: true,
     trim: true,
     minLength: 8
-  }
+  },
+  tokens: [
+    {
+      token: {
+        type: String,
+        required: true
+      }
+    }
+  ]
 });
 
-userSchema.statics.findByCredentials = async ({regNumber, email, password}) => {
-  const user = await User.findOne({regNumber, email});
+userSchema.methods.toJSON = function () {
+  const user = this;
 
+  const userObject = user.toObject();
+
+  delete userObject.password;
+  delete userObject.tokens;
+
+  return userObject;
+};
+
+userSchema.methods.getAuthToken = async function () {
+  const user = this;
+  const token = jwt.sign({_id: user._id.toString()}, process.env.SECRET);
+
+  user.tokens = user.tokens.concat({token});
+  await user.save();
+  return token;
+};
+
+userSchema.statics.findByCredentials = async (regNumber, email, password) => {
+  const user = await User.findOne({regNumber, email});
+  console.log(user);
   if (!user) {
     throw new Error('Unable to login');
   }
@@ -80,8 +110,10 @@ userSchema.statics.findByCredentials = async ({regNumber, email, password}) => {
 
 userSchema.pre('save', async function (next) {
   const user = this;
-  const salt = await bcrypt.genSalt(Number(process.env.SALT_ROUNDS));
-  user.password = await bcrypt.hash(user.password, salt);
+  if (user.isModified('password')) {
+    const salt = await bcrypt.genSalt(Number(process.env.SALT_ROUNDS));
+    user.password = await bcrypt.hash(user.password, salt);
+  }
   next();
 });
 
