@@ -4,18 +4,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Dashboard</title>
+  <link rel="shortcut icon" href="images/favicon (2).ico" type="image/x-icon">
   <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/dashboard.css">
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/e6d78baaaf.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-  <nav>
-    <a href="/">About</a>
-    <a href="/login.html">Login</a>
-    <a href="/register.html">Register</a>
-    <a href="/dashboard.html">Dashboard</a>
+  <nav class="nav-start nav-bg-purple">
+    <div class="nav-header">
+      <img src="images/logo.png" alt="Katavault logo">
+    </div>
+
+    <input type="checkbox" name="" id="content-toggle">
+    <label for="content-toggle" class="hamburger">&#9776;</label>
+    <div class="nav-contents2">
+      <div class="info">
+        <a href="/dashboard.html" class="active-page">Dashboard</a>
+        <a href="/">Home</a>
+
+        <!-- <a href="/dashboard.html">Dashboard</a> -->
+      </div>
+    </div>
   </nav>
-  <h1>I Present Your Dashboard Sir</h1>
+  <section id="dashboard">
+    <h1>Welcome Back, <span id="firstName"></span></h1>
+    <h3>Files Uploaded</h3>
+    <span><a href="/profile.html">Profile</a></span>
+    <div id="uploadedFilesArea" class="files-uploaded">
+      <div class="loader"></div>
+    </div>
+    <div class="upload-files">
+      <h3>Upload A File</h3>
+      <form method="post" action="/users/file_upload" enctype="multipart/form-data">
+        <span id="errorText"></span>
+        <label for="fileUploaded">
+          <i class="fa-solid fa-file-arrow-up"></i>
+        </label>
+        <input type="file" name="file" id="fileUploaded">
+        <button type="submit">Upload File</button>
+      </form>
+    </div>
+  </section>
+  <script src="scripts/dashboard.js" type="module"></script>
 </body>
 
 </html>

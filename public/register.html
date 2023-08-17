@@ -4,18 +4,60 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Register</title>
+  <link rel="shortcut icon" href="images/favicon (2).ico" type="image/x-icon">
   <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/login.css">
 </head>
 
 <body>
-  <nav>
-    <a href="/">About</a>
-    <a href="/login.html">Login</a>
-    <a href="/register.html">Register</a>
-    <a href="/dashboard.html">Dashboard</a>
+  <nav class="nav-start nav-bg-grey">
+    <div class="nav-header">
+      <img src="images/logo.png" alt="Katavault logo">
+    </div>
+
+    <input type="checkbox" name="" id="content-toggle">
+    <label for="content-toggle" class="hamburger">&#9776;</label>
+    <div class="nav-contents2">
+      <div class="info">
+        <a href="/">Home</a>
+        <!-- <a href="/dashboard.html">Dashboard</a> -->
+      </div>
+    </div>
   </nav>
-  <h1>Register An Account</h1>
+  <section id="form-area">
+    <img src="images/login-icon.png" alt="Illustrative iconography">
+    <form method="post" action="/users/register">
+      <span id="errorText"></span>
+      <div>
+        <label for="firstName">Enter first name</label>
+        <input type="text" name="firstName" id="firstName" autocomplete="off">
+      </div>
+      <div>
+        <label for="lastName">Enter last name</label>
+        <input type="text" name="lastName" id="lastName" autocomplete="off">
+      </div>
+      <div>
+        <label for="phoneNumber">Enter phone number</label>
+        <input type="text" name="phoneNumber" id="phoneNumber" autocomplete="off">
+      </div>
+      <div>
+        <label for="regNumber">Enter registration number</label>
+        <input type="text" name="regNumber" id="regNumber" autocomplete="off">
+      </div>
+      <div>
+        <label for="email">Enter email address</label>
+        <input type="text" name="email" id="email" autocomplete="off">
+      </div>
+      <div>
+        <label for="password">Enter password</label>
+        <input type="password" name="password" id="password" autocomplete="off">
+      </div>
+      <button type="submit">Register</button>
+      <span>Already a user? <a href="/login.html">Log in</a></span>
+    </form>
+  </section>
+  <script src="scripts/register.js" type="module"></script>
 </body>
 
 </html>

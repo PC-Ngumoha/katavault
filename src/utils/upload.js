@@ -37,7 +37,7 @@ const uploadToIPFS = async (file) => {
 };
 
 const removeUploadsDir = () => {
-  fs.rmdir(uploadPath, {recursive: true}, (err) => {
+  fs.rm(uploadPath, {recursive: true}, (err) => {
     if (err) {
       console.log(err);
     }

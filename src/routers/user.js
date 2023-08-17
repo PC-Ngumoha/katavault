@@ -5,7 +5,6 @@
  * Contains the routes details for 'User' access
  */
 const express = require('express');
-// const bcrypt = require('bcrypt');
 const fileUpload = require('express-fileupload');
 require('dotenv').config();
 const User = require('../models/user.js');
@@ -30,7 +29,6 @@ const {
   addFileToBlockchain
 } = require('../utils/contract.js');
 
-// router.get('/', (req, res) => {});
 
 //FIXME: This is simply a test route
 // TODO: Clean out this route definition when done with testing.
@@ -88,11 +86,11 @@ router.post('/users/file_upload', auth, async (req, res) => {
   if (!req.files || Object.keys(req.files).length === 0) {
     return res.status(400).send({error: 'No File Uploaded'});
   }
+
   let file = req.files.file;
   try {
     file = await uploadFileToServer(file);
     file = await uploadToIPFS(file);
-    console.log(file);
     await addFileToBlockchain(req.user._id.toString(), file);
     removeUploadsDir();
     res.send();
@@ -105,16 +103,14 @@ router.post('/users/file_upload', auth, async (req, res) => {
 //GET /users/me -> Displays a specific user's info
 router.get('/users/me', auth, async (req, res) => {
   const results = await retrieveFilesFromBlockchain(req.user._id.toString());
-  // console.log(result.fileName, result.fileHash, result.fileLink);
   const files = [];
   for (let i = 0; i < results.length; i++) {
-    files.push({
+    files.unshift({
       name: results[i][0],
       hash: results[i][1],
       link: results[i][2]
     });
   }
-  // console.log(files);
   res.send({user: req.user, files});
 });
 

@@ -1,0 +1,96 @@
+/* STYLESHEET FOR THE LOGIN / REGISTRATION PAGES */
+
+/* Login button background color: #d1cfcf */
+/* Navbar text & border color: #565657*/
+/* Light grey: #bdbdbf */
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+/* General design utilities */
+
+#form-area {
+  width: 90%;
+  padding: 1rem;
+  margin: 1rem auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#form-area > img {
+  height: 80%;
+  width: 60%;
+}
+
+#form-area > form {
+  height: fit-content;
+  width: 35%;
+  padding: 1rem 2rem;
+  border: .133rem solid #bdbdbf;
+  border-radius: 1rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: rgba(86, 86, 87, .8) ;
+}
+
+#form-area > form input{
+  display: block;
+  width: 100%;
+  height: 3.5rem;
+  padding: .7rem;
+  margin: .5rem 0rem 2rem 0rem;
+  border: .133rem solid #bdbdbf;
+  border-radius: 1rem;
+}
+
+#form-area > form input:focus {
+  outline: none;
+}
+
+#form-area > form .visibility {
+  position: relative;
+  left: 42%;
+}
+
+#form-area > form button {
+  display: block;
+  height: 4rem;
+  width: 100%;
+  background-color: rgba(189, 189, 191, .8);
+  color: white;
+  font-size: 1.9rem;
+  font-weight: 500;
+  border: 0;
+  border-radius: 4rem;
+}
+
+#form-area > form button:hover {
+  background-color: rgba(189, 189, 191, .2);
+  color: #565657;
+  transition: all 1.5s ease-in;
+}
+
+#form-area > form > span {
+  display: block;
+  margin: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+#form-area > form > span > a {
+  color: black;
+  text-decoration: underline;
+}
+
+
+/* For Smartphone */
+@media (max-width: 480px) {
+  #form-area > img {
+    display: none;
+  }
+
+  #form-area > form {
+    width: 100%;
+    align-self: center;
+  }
+}

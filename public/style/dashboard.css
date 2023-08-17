@@ -1,0 +1,206 @@
+/* STYLES FOR THE USER DASHBOARD */
+
+/* Pitch message color: #362285*/
+/* Navbar text & border color: #565657*/
+/* Navbar & Button Hover white & Section header color: #f1f0f5*/
+
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300;400;500&family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+#dashboard {
+  padding: 3rem 6rem;
+  margin: 0 auto;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+#dashboard > h1 {
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+#dashboard > h3 {
+  font-size: 1.6rem;
+  margin: 2rem 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+#dashboard > span {
+  display: block;
+  position: absolute;
+  right: 20%;
+  top: 21.5%;
+  font-size: 1.5rem;
+}
+
+#dashboard > span > a {
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 500;
+  text-decoration: none;
+  color: #210f6c;
+}
+
+#dashboard .files-uploaded {
+  margin: 1rem 3rem;
+  font-size: 1.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* File Cards */
+
+#dashboard .files-uploaded > .no-file-card {
+  width: 90%;
+  align-self: center;
+  height: 25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#dashboard .files-uploaded > .no-file-card > span {
+  font-size: 2.1rem;
+  font-family: 'Fira Sans', sans-serif;
+  font-weight: 300;
+  color: #210f6c;
+}
+
+#dashboard .files-uploaded > .file-card {
+  padding: 1rem;
+  width: 30%;
+  height: 25rem;
+  margin-bottom: 2rem;
+  /* overflow: hidden; */
+  background-color: rgba(241, 240, 245, .5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 3rem;
+}
+
+#dashboard > .files-uploaded .file-card-header {
+  width: 100%;
+  padding: 3.5rem 2rem;
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+#dashboard > .files-uploaded .file-card-header span {
+  width: 80%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+#dashboard > .files-uploaded .file-card-body {
+  width: 90%;
+  overflow: hidden;
+  align-self: center; 
+}
+
+#dashboard > .files-uploaded object {
+  width: calc(100% + 15px);
+  height: calc(100% + 15px);
+  box-shadow: inset;
+  border: 0;
+}
+
+@media (max-width: 480px) {
+  #dashboard>h1 {
+    font-size: 1.9rem;
+    font-weight: 500;
+  }
+
+  #dashboard>span {
+    top: 24.5%;
+    font-size: 1.3rem;
+  }
+
+  #dashboard .files-uploaded {
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+  }
+
+  #dashboard .files-uploaded>.file-card {
+    width: 100%;
+  }
+}
+
+
+/* "Upload Files" segment */
+
+#dashboard > .upload-files {
+  width: 60%;
+  height: fit-content;
+  margin: 4rem auto;
+  padding: 1rem;
+  background-color: rgba(241, 240, 245,.5);
+  border-radius: 2.5rem;
+}
+
+#dashboard > .upload-files > h3 {
+  font-size: 1.2rem;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+#dashboard > .upload-files form {
+  width: 80%;
+  height: 20rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+#dashboard > .upload-files #fileUploaded::-webkit-file-upload-button {
+  visibility: hidden;
+  text-align: center;
+}
+
+#dashboard > .upload-files  label {
+  font-size: 6rem;
+  color: rgba(54, 34, 133, .39);
+  transition: all .9s ease;
+}
+
+#dashboard > .upload-files label:hover {
+  font-size: 6rem;
+  color: rgba(54, 34, 133, .6);
+  margin: 4rem 0 3rem;
+  transform: scale(2.0);
+  transition: all .7s ease;
+}
+
+#dashboard > .upload-files  button {
+  margin: 1rem 0;
+  width: 60%;
+  height: 3rem;
+  border: .1rem solid #362285;
+  border-radius: 4rem;
+  background-color: #f1f0f5;
+  color: #362285;
+}
+
+#dashboard > .upload-files  button:hover {
+  border: 0;
+  background-color: #362285;
+  color: #f1f0f5;
+  transition: all 1.3s;
+}
+
+@media (max-width: 480px) {
+  #dashboard > .upload-files {
+    width: 100%;
+  }
+
+  #dashboard > .upload-files button {
+    width: 80%;
+  }
+}

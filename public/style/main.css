@@ -1,4 +1,5 @@
-/* Page background & Navbar Header color: #362285*/
+/* Navbar Header color: #362285*/
+/* Lighter btn hover color: #7438f5*/
 /* Navbar & Button Hover white: #f1f0f5*/
 /* Navbar text & border color: #565657*/
 
@@ -16,12 +17,53 @@ html {
   font-size: 10px;
 }
 
+/* 3rd Party Override CSS */
+
+
 /* GENERAL UTILITY CLASSES */
+
+/* Pages */
+.active-page {
+  font-weight: 500 !important;
+}
+
+.loader {
+  border: 1.6rem solid #f1f0f5;
+  /* Light grey */
+  border-top: 1.6rem solid #362285;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+  margin: 0 auto;
+  display: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#errorText {
+  width: 100%;
+  height: 3rem;
+  text-align: center;
+  color: red;
+  font-size: 1.4rem;
+  font-family: 'Fira Sans', sans-serif;
+  display: none;
+}
 
 /* Buttons */
 
 .btn-dark-solid-border {
-  border: .1rem solid #565657;
+  border: .15rem solid #565657;
   padding: 1rem 1rem;
   border-radius: 1rem;
 }
@@ -32,19 +74,98 @@ html {
   transition: all .7s;
 }
 
+.btn-dark {
+  background-color: #362285;
+  color: #f1f0f5;
+  font-size: 1.5rem;
+  display: inline-block;
+  height: fit-content;
+  width: 10rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 2rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-dark:hover {
+  background-color: #7438f5;
+  color: white;
+  transition: all 1.3s ease-out;
+}
+
+@media (max-width: 480px) {
+  .btn-dark {
+    display: block;
+    width: 80%;
+  }
+}
+
+.btn-dark-lg {
+  background-color: #362285;
+  color: #f1f0f5;
+  font-size: 1.5rem;
+  display: block;
+  height: fit-content;
+  width: 80%;
+  padding: 1rem;
+  border-radius: 1rem;
+  margin: 2rem auto;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-dark-lg:hover {
+  background-color: #7438f5;
+  color: white;
+  transition: all 1.3s ease-out;
+}
+
+
+/* Navbar components & features */
+
+.nav-space-btw {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-start {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.nav-bg-grey {
+  background-color: #f1f0f5;
+}
+
+.nav-bg-grey a {
+  color: #362285;
+}
+
+.nav-bg-purple {
+  background-color: #362285;
+}
+
+.nav-bg-purple a {
+  color: #f1f0f5;
+}
+
+.nav-bg-purple label {
+  color: #f1f0f5;
+}
 
 
 /* NAVIGATION BAR STYLING */
 
 nav {
   font-size: 1.5rem;
-  background-color: #f1f0f5;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
   padding: 1rem 1rem;
   position: sticky;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 /* nav > div {
@@ -54,30 +175,108 @@ nav {
 
 nav  a {
   text-decoration: none;
-  color: #565657;
-  margin: .5rem; 
+  margin: 1rem; 
 }
 
-
-.nav-header {
-  font-size: 2.1rem;
+.nav-header > img {
+  height: 3rem;
+  width: 3rem;
+  object-fit: scale-down;
+  margin-right: 2rem;
 }
 
-.nav-header > .kata {
-  font-weight: 400;
-  color: #362285;
-  font-family: 'Lobster', cursive;
+nav > input[type="checkbox"] {
+  display: none;
 }
 
-.nav-header > .vault {
-  font-weight: 500;
-  font-family: 'Fira Sans', sans-serif;
+nav > .hamburger {
+  display: none;
+  font-size: 2.4rem;
+  user-select: none;
 }
 
 .nav-contents {
-  display: flex;
+  /* align-self: flex-end; */
   width: 50%;
-  justify-content: space-around;
-  font-size: 1.3rem;
-  font-family: 'Fira Sans', sans-serif;
+  /* display: block; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-contents2 {
+  width: fit-content;
+}
+
+
+
+/*On Mobile screens*/
+@media  (max-width: 480px) {
+  /* nav {
+    display: block !important;
+  } */
+
+  .nav-start,
+  .nav-space-btw {
+    /* justify-content: space-between; */
+    display: block; /* TODO: This is a HACK*/
+  }
+
+  .nav-header img{
+    width: fit-content;
+    /* margin: 80%; */
+  }
+
+  /* .nav-header > img {
+
+  } */
+
+    /* TODO: This following CSS rule is a HACK*/
+  nav > .hamburger {
+    display: inline;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    /* position: relative;
+    float: right; */
+  }
+
+  .nav-space-btw > input[type="checkbox"]:checked ~ .nav-contents{
+    display: block;
+    /*transition: display 2s; */
+    /* opacity: 1; */
+    /* height: fit-content; */
+  }
+
+  .nav-start > input[type="checkbox"]:checked ~ .nav-contents2{
+    display: block;
+    /* transition: display 2s; */
+    /* opacity: 1;
+    height: fit-content; */
+  }
+
+  .nav-contents,
+  .nav-contents2 {
+    /* display: none; */
+    display: none;
+    position: relative;
+    /* height: 0;
+    opacity: 0;
+    overflow: hidden; */
+    /* transition: opacity .8s ease-in-out; */
+    width: 100%;
+    /* flex-grow: 2; */
+  }
+
+  .nav-contents > .info a,
+  .nav-contents2 > .info a {
+    display: block;
+    text-align: center;
+  }
+  
+  .nav-contents > .login {
+    /* display: none; */
+    margin: 2rem auto;
+    width: fit-content;
+  
+  }
 }

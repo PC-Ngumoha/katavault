@@ -13,6 +13,7 @@ const auth = async (req, res, next) => {
     const decoded = jwt.verify(token, process.env.SECRET);
     const user = await User.findOne({_id: decoded._id, 'tokens.token': token});
 
+
     if (!user) {
       throw new Error();
     }
@@ -21,7 +22,8 @@ const auth = async (req, res, next) => {
     req.user = user;
     next();
   } catch (e) {
-    res.status(401).send({status: 'Error', reason: 'User Not Authenticated'});
+    console.log(e);
+    res.status(401).send({status: 'Error', reason: `Error Occurred`});
   }
 };
 

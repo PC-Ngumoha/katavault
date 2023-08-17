@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="shortcut icon" href="images/favicon (2).ico" type="image/x-icon">
+  <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/profile.css">
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/e6d78baaaf.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <nav class="nav-start nav-bg-purple">
+    <div class="nav-header">
+      <img src="images/logo.png" alt="Katavault logo">
+    </div>
+
+    <input type="checkbox" name="" id="content-toggle">
+    <label for="content-toggle" class="hamburger">&#9776;</label>
+    <div class="nav-contents2">
+      <div class="info">
+        <a href="/profile.html" class="active-page">Profile</a>
+        <a href="/">Home</a>
+        <a href="/dashboard.html">Dashboard</a>
+
+        <!-- <a href="/dashboard.html">Dashboard</a> -->
+      </div>
+    </div>
+  </nav>
+  <section id="profile">
+    <div class="user-details">
+      <div class="loader"></div>
+      <span id="name"></span>
+      <span id="email"></span>
+      <span id="regno"></span>
+      <span id="phone"></span>
+    </div>
+    <div id="userFileArea" class="user-files">
+      <div class="loader"></div>
+      <!-- <div class="user-file-card">
+        <span class="name">School_fees.pdf</span>
+        <span class="copy"><button value="LINK HERE"><i class="fa-regular fa-copy"></i></button></span>
+        <span class="goto"><a href="#" target="_blank"><i class="fa-regular fa-eye"></i></a></span>
+      </div> -->
+    </div>
+  </section>
+  <button id="logoutBtn" class="btn-dark-lg">Log Out</button>
+  <script src="scripts/profile.js" type="module"></script>
+</body>
+
+</html>

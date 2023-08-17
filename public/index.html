@@ -4,27 +4,91 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Home</title>
+  <link rel="shortcut icon" href="images/favicon (2).ico" type="image/x-icon">
   <link rel="stylesheet" href="style/main.css">
+  <link rel="stylesheet" href="style/landing_page.css">
+  <!-- FONT AWESOME -->
+  <script src="https://kit.fontawesome.com/e6d78baaaf.js" crossorigin="anonymous"></script>
+  <!-- Typed.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.js"
+    integrity="sha512-tQQXRDB2wEmuJGtFrmmoFYzNTq8StA1XJrfO0OQbbTxd9G0CwaTDL6/C1y805IlvBVrMwOqob1kf6r/2U5XXVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </head>
 
 <body>
-  <nav>
+  <nav class="nav-space-btw nav-bg-grey">
     <div class="nav-header">
-      <span class="kata">Kata</span><span class="vault">Vault</span>
+      <img src="images/logo.png" alt="Katavault logo">
     </div>
+
+    <input type="checkbox" name="" id="content-toggle">
+    <label for="content-toggle" class="hamburger">&#9776;</label>
     <div class="nav-contents">
-      <div>
-        <a href="/">About</a>
-        <a href="/dashboard.html">Dashboard</a>
+      <div class="info">
+        <a href="/" class="active-page">Home</a>
       </div>
-      <div>
-        <a href="/login.html" class="btn-dark-solid-border">Login</a>
-        <a href="/register.html" class="btn-dark-solid-border">Register</a>
+      <div class="login">
+        <a href="/login.html" class="btn-dark-solid-border btn-login">Login</a>
+        <a href="/register.html" class="btn-dark-solid-border btn-login">Register</a>
+        <a href="/dashboard.html" class="btn-dark-solid-border btn-dashboard">Dashboard</a>
       </div>
     </div>
   </nav>
-  <h1>Hello and Welcome to my page</h1>
+  <!-- <h1>Hello and Welcome to my page</h1> -->
+  <section id="pitch">
+    <div id="message"></div>
+    <img src="images/filemgt.jpg" alt="illustrative file management icon">
+  </section>
+
+  <section id="about">
+    <h2>Meet The Team</h2>
+    <div class="persona">
+      <img src="images/profile_5.png" alt="Chukwuemeka Ngumoha">
+      <div>
+        <span>Chukwuemeka Ngumoha</span>
+        <span>Web & Smart contract Engineer</span>
+        <a href="https://www.linkedin.com/in/prince-ngumoha-95a633194/" target="_blank"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/PNgumoha" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+    <div class="persona">
+      <img src="images/Ifeduba.jpg" alt="Vitus Kenechukwu Ifeduba">
+      <div>
+        <span>Vitus Kenechukwu Ifeduba</span>
+        <span>Product Designer</span>
+        <a href="https://www.linkedin.com/in/vitus-ifeduba-078a9918a" target="_blank"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/glitz_Cr8tiv?t=F0pLYS_td7uzreC7LQ3ySg&s=09" target="_blank"><i
+            class="fa-brands fa-twitter"></i></a>
+      </div>
+    </div>
+
+    <div class="persona">
+      <img src="images/stephen.jpg" alt="Stephen Okenwa">
+      <div>
+        <span>Stephen Okenwa</span>
+        <span>Team Researcher</span>
+        <!-- <a href="https://www.linkedin.com/in/vitus-ifeduba-078a9918a" target="_blank"><i
+            class="fa-brands fa-linkedin"></i></a>
+        <a href="https://twitter.com/glitz_Cr8tiv?t=F0pLYS_td7uzreC7LQ3ySg&s=09" target="_blank"><i
+            class="fa-brands fa-twitter"></i></a> -->
+      </div>
+    </div>
+  </section>
+  <section id="cta">
+    <h2>So, what Are you waiting for?</h2>
+    <h3>start using the service today</h3>
+    <a href="/login.html" class="btn-dark btn-login">Login</a>
+    <a href="/register.html" class="btn-dark btn-login">Register</a>
+    <a href="/dashboard.html" class="btn-dark-lg btn-dashboard">Go to Dashboard</a>
+  </section>
+  <footer>
+    Copyright @ Katavault 2023
+  </footer>
+  <script src="scripts/typed.js"></script>
+  <script src="scripts/landing_page.js" type="module"></script>
 </body>
 
 </html>
