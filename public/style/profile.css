@@ -41,7 +41,8 @@
   }
   
   #profile > .user-details > span {
-    font-size: 1.7rem;
+    font-size: .9rem;
+    font-weight: 700;
   }
 }
 

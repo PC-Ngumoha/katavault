@@ -17,22 +17,26 @@
   font-weight: 500;
 }
 
-#dashboard > h3 {
+#dashboard > #heading {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#dashboard > #heading > h3 {
   font-size: 1.6rem;
   margin: 2rem 0;
   font-weight: 500;
   font-size: 1.5rem;
 }
 
-#dashboard > span {
+#dashboard > #heading > span {
   display: block;
-  position: absolute;
-  right: 20%;
-  top: 21.5%;
   font-size: 1.5rem;
 }
 
-#dashboard > span > a {
+#dashboard > #heading > span > a {
   font-family: 'Fira Sans', sans-serif;
   font-weight: 500;
   text-decoration: none;
@@ -108,14 +112,9 @@
 }
 
 @media (max-width: 480px) {
-  #dashboard>h1 {
+  #dashboard > h1 {
     font-size: 1.9rem;
     font-weight: 500;
-  }
-
-  #dashboard>span {
-    top: 24.5%;
-    font-size: 1.3rem;
   }
 
   #dashboard .files-uploaded {
@@ -124,7 +123,7 @@
     align-items: center;
   }
 
-  #dashboard .files-uploaded>.file-card {
+  #dashboard .files-uploaded > .file-card {
     width: 100%;
   }
 }
