@@ -37,11 +37,11 @@
 @media (max-width: 480px) {
   
   #profile > .user-details {
-    width: 80%;
+    width: 100%;
   }
   
   #profile > .user-details > span {
-    font-size: .9rem;
+    font-size: .7rem;
     font-weight: 700;
   }
 }
