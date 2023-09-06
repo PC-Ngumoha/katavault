@@ -29,27 +29,33 @@
     <img src="images/login-icon.png" alt="Illustrative iconography">
     <form method="post" action="/users/register">
       <span id="errorText"></span>
-      <div>
+      <div class="hover-text">
+        <span class="tooltip-text">Enter your first name</span>
         <label for="firstName">Enter first name</label>
         <input type="text" name="firstName" id="firstName" autocomplete="off">
       </div>
-      <div>
+      <div class="hover-text">
+        <span class="tooltip-text">Enter your last name</span>
         <label for="lastName">Enter last name</label>
         <input type="text" name="lastName" id="lastName" autocomplete="off">
       </div>
-      <div>
-        <label for="phoneNumber">Enter phone number</label>
+      <div class="hover-text">
+        <span class="tooltip-text">Must be a valid phone number</span>
+        <label for="phoneNumber">Enter phone number </label>
         <input type="text" name="phoneNumber" id="phoneNumber" autocomplete="off">
       </div>
-      <div>
-        <label for="regNumber">Enter registration number</label>
+      <div class="hover-text">
+        <span class="tooltip-text">Can be any sequence of numbers</span>
+        <label for="regNumber">Enter registration number </label>
         <input type="text" name="regNumber" id="regNumber" autocomplete="off">
       </div>
-      <div>
+      <div class="hover-text">
+        <span class="tooltip-text">Must be a valid email address</span>
         <label for="email">Enter email address</label>
         <input type="text" name="email" id="email" autocomplete="off">
       </div>
-      <div>
+      <div class="hover-text">
+        <span class="tooltip-text">A strong password ideally</span>
         <label for="password">Enter password</label>
         <input type="password" name="password" id="password" autocomplete="off">
       </div>

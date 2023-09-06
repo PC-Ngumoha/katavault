@@ -60,6 +60,28 @@ html {
   display: none;
 }
 
+
+/* TOOLTIPS */
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  z-index: 1;
+  width: 10rem;
+  color: white;
+  background-color: #192733;
+  padding: .5rem;
+  display: inline-block;
+  border-radius: 5px;
+  right: .1rem;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.hover-text:hover .tooltip-text {
+  visibility: visible;
+}
+
+
 /* Buttons */
 
 .btn-dark-solid-border {

@@ -40,7 +40,7 @@ const userSchema = new mongoose.Schema({
     trim: true,
     validate(value) {
       // Checks if it's a nigerian phone number
-      if (!validator.isMobilePhone(value, 'en-NG')) {
+      if (!validator.isMobilePhone(value)) {
         throw new Error('Not a valid phone number');
       }
     }
